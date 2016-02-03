@@ -30,6 +30,8 @@ CPP	=cpp -nostdinc -Iinclude
 .s.o:
 	$(AS)  -o $*.o $<
 
+all:test
+
 clean:
 	rm -rf *.o
 
