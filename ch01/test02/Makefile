@@ -28,7 +28,7 @@ CPP	=cpp -nostdinc -Iinclude
 	$(CC) $(CFLAGS) \
 	-nostdinc -Iinclude -S -o $*.s $<
 .s.o:
-	$(AS)  -o $*.o $<
+	$(AS) -gstabs -o $*.o $<
 
 all:test
 
@@ -36,4 +36,4 @@ clean:
 	rm -rf *.o
 
 test: test.o
-	$(LD)  -o test test.o
+	$(LD) -o test test.o
