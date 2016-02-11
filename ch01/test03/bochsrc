@@ -1,0 +1,28 @@
+###############################################################
+# Configuration file for Bochs
+###############################################################
+
+# how much memory the emulated machine will have
+megs: 32
+
+#gdbstub: enabled=1, port=9999, text_base=0, data_base=0, bss_base=0
+
+# filename of ROM images
+romimage: file=$BXSHARE/BIOS-bochs-latest
+vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+
+# what disk images will be used
+floppya: 1_44=boot.img, status=inserted
+
+# choose the boot disk.
+boot: floppy
+
+# where do we send log messages?
+# log: bochsout.txt
+# disable the mouse
+mouse: enabled=0
+
+display_library: sdl
+
+# enable key mapping, using US layout as default.
+##keyboard_mapping: enabled=1, map=$BXSHARE/keymaps/x11-pc-us.map
