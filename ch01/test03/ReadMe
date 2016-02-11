@@ -1,27 +1,5 @@
-ver 0.0.0 目前为最简陋模式，运行本程序需要安装bochs，bochs都配置路径也许需要修改，请您自行修改bochsrc文件,运行方法:1.make image 2.sh boot.sh  2012-09-20 by ke.chenk
+ver 0.0.0 目前为最简陋模式，运行本程序需要安装bochs，bochs都配置路径也许需要修改，请您自行修改bochsrc文件,运行方法:
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++华丽分割线++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-关于我们：
+1.make image
 
-我们的希望编写一个纯粹以学习为目的操作系统，
-
-我们的源码地址为：
-
-http://code.google.com/p/playos/
-
- 
-
-我们的成员是：
-
-stone2083
-
-ke.chenk
-
-zhuyong
-
-dengwenjia
-
-nishunjian
-
-联系我们：
-http://www.codeanywhere.org
+2.sh boot.sh
