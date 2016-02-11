@@ -39,7 +39,7 @@ startup_32:
 	movl	$0x00080000,%eax
 	movw	$time_interrupt,%ax
 	movw 	$0x8E00,%dx	#中断门类型，特权级为0
-	movl	$0x08,%ecx	#开机时bios设置的时钟中断向量号，这边直接使用它，你也可以通过对8259A芯片的设置改变向量号，设置方法可以参考《自己动手编写操作系统》第三章
+	movl	$0x08,%ecx	#开机时bios设置的时钟中断向量号，这边直接使用它，你也可以通过对8259A芯片的设置改变向量号.
 	lea	idt(,%ecx,8),%esi	#将idt+ecx*8的地址写入esi
 	movl	%eax,(%esi)
 	movl	%edx,4(%esi)
@@ -65,7 +65,7 @@ startup_32:
 	lldt	%ax
 	movl	$0,current
 	sti
-	#构造iret指令返回前的堆栈状况,iret需要弹出eflag，具体构造方法，参加《Orange's一个操作系统的实现》，图3.21
+	#构造iret指令返回前的堆栈状况,iret需要弹出eflag.
 	pushl	$0x17	#调用者ss 此时段选择子的ti位为1，RPL为3 数据段为0x10+7=0x17
 	pushl	$init_stack	#调用者esp
 	pushfl	#标志寄存器入栈
@@ -174,7 +174,7 @@ lgdt_opcode:
 	.word (end_gdt-gdt)-1
 	.long gdt
 
-idt:	.fill 256,8,0	#256个门描述符，每个8字节，门描述符和普通描述符类似，结构可以参考《自己动手编写操作系统》第三章
+idt:	.fill 256,8,0	#256个门描述符，每个8字节，门描述符和普通描述符类似.
 
 gdt:	.quad 0x0000000000000000
 	.quad 0x00c09a00000007ff	#代码段
@@ -205,7 +205,7 @@ tss0:	.long 0 			/* back link */
 	.long 0, 0, 0, 0, 0		/* eip, eflags, eax, ecx, edx */
 	.long 0, 0, 0, 0, 0		/* ebx esp, ebp, esi, edi */
 	.long 0, 0, 0, 0, 0, 0 		/* es, cs, ss, ds, fs, gs */
-	.long LDT0_SEL, 0x8000000	/* ldt, trace bitmap 这边bitmap的地址无效，而且任务也没有IO操作，随便乱写也无所谓，具体设置方法可以参考INTEL开发手册312页，或于渊书本第三章最后一节*/
+	.long LDT0_SEL, 0x8000000	/* ldt, trace bitmap 这边bitmap的地址无效，而且任务也没有IO操作，随便乱写也无所谓，具体设置方法可以参考INTEL开发手册312页*/
 	
 	.fill 128,4,0	#stack0堆栈大小
 krn_stk0:
@@ -221,7 +221,7 @@ tss1:	.long 0 			/* back link */
 	.long 0, 0, 0, 0		/* eax, ecx, edx, ebx */
 	.long usr_stk1, 0, 0, 0		/* esp, ebp, esi, edi */
 	.long 0x17,0x0f,0x17,0x17,0x17,0x17 /* es, cs, ss, ds, fs, gs */
-	.long LDT1_SEL, 0x8000000	/* ldt, trace bitmap 这边bitmap的地址无效，而且任务也没有IO操作，随便乱写也无所谓，具体设置方法可以参考INTEL开发手册312页，或于渊书本第三章最后一节*/
+	.long LDT1_SEL, 0x8000000	/* ldt, trace bitmap 这边bitmap的地址无效，而且任务也没有IO操作，随便乱写也无所谓，具体设置方法可以参考INTEL开发手册312页*/
 
 	.fill 128,4,0
 krn_stk1:
