@@ -1,0 +1,6 @@
+function myprint:string (val) 
+%{
+char *str = (char *)STAP_ARG_val;
+snprintf(STAP_RETVALUE, MAXSTRINGLEN, "%s",str);
+%}
+probe process(3266).function("print") {printf("%s\n",myprint($p));}
