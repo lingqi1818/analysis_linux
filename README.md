@@ -17,4 +17,8 @@ http://nginx.org/download/nginx-1.12.2.tar.gz
 
 http://www.memcached.org/files/memcached-1.5.3.tar.gz
 
+#mycat代码下载地址
+
+https://github.com/MyCATApache/Mycat-Server
+
 
