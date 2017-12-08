@@ -21,4 +21,8 @@ http://www.memcached.org/files/memcached-1.5.3.tar.gz
 
 https://github.com/MyCATApache/Mycat-Server
 
+# redis代码下载地址
+
+http://download.redis.io/releases/redis-3.2.11.tar.gz
+
 
