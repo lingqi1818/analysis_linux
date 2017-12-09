@@ -30,6 +30,10 @@ http://download.redis.io/releases/redis-3.2.11.tar.gz
 
 https://fastdl.mongodb.org/src/mongodb-src-r3.6.0.tar.gz
 
-#kafka下载地址
+# kafka下载地址
 
 https://github.com/apache/kafka
+
+# tfs下载地址
+
+http://code.taobao.org/p/tfs/wiki/get/
