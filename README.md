@@ -26,3 +26,10 @@ https://github.com/MyCATApache/Mycat-Server
 http://download.redis.io/releases/redis-3.2.11.tar.gz
 
 
+# mongodb代码下载地址
+
+https://fastdl.mongodb.org/src/mongodb-src-r3.6.0.tar.gz
+
+#kafka下载地址
+
+https://github.com/apache/kafka
